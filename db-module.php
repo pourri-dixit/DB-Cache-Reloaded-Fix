@@ -306,7 +306,7 @@ class dbrc_wpdb extends wpdb{
 				if( false == isset( $this->dbhglobal ) ) {
 					$this->db_connect( $query );
 				}
-				$dbh =& $this->dbhglobal;
+				$dbh = $this->dbhglobal;
 				$this->last_db_used = "global";
 				// --- DB Cache Start ---
 				$dbcr_db = 'global';
@@ -315,14 +315,14 @@ class dbrc_wpdb extends wpdb{
 				if( false == isset( $this->dbhwrite ) ) {
 					$this->db_connect( $query );
 				}
-				$dbh =& $this->dbhwrite;
+				$dbh = $this->dbhwrite;
 				$this->last_db_used = "write";
 			} else {
-				$dbh =& $this->dbh;
+				$dbh = $this->dbh;
 				$this->last_db_used = "read";
 			}
 		} else {
-			$dbh =& $this->dbh;
+			$dbh = $this->dbh;
 			$this->last_db_used = "other/read";
 			// DB Cache Start
 			if( $this->blogs != '' && preg_match("/(" . $this->blogs . "|" . $this->users . "|" . $this->usermeta . "|" . $this->site . "|" . $this->sitemeta . "|" . $this->sitecategories . ")/i",$query) ) {

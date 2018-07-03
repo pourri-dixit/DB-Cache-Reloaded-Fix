@@ -102,7 +102,7 @@ class DBCR_WPDB_Wrapper {
 		if ( @include_once( DBCR_PATH.'/db-functions.php' ) ) {
 			$this->dbcr_config = unserialize( @file_get_contents( WP_CONTENT_DIR.'/db-config.ini' ) );
 			
-			$this->dbcr_cache =& new pcache();
+			$this->dbcr_cache = new pcache();
 			$this->dbcr_cache->lifetime = isset( $this->dbcr_config['timeout'] ) ? $this->dbcr_config['timeout'] : 5;
 			
 			// Clean unused
@@ -121,8 +121,8 @@ class DBCR_WPDB_Wrapper {
 			// cache only frontside
 			if (
 				( defined( 'WP_ADMIN' ) && WP_ADMIN ) ||
-			 	( defined( 'DOING_CRON' ) && DOING_CRON ) || 
-			 	( defined( 'DOING_AJAX' ) && DOING_AJAX ) || 
+				( defined( 'DOING_CRON' ) && DOING_CRON ) || 
+				( defined( 'DOING_AJAX' ) && DOING_AJAX ) || 
 				strpos( $_SERVER['REQUEST_URI'], 'wp-admin' ) || 
 				strpos( $_SERVER['REQUEST_URI'], 'wp-login' ) || 
 				strpos( $_SERVER['REQUEST_URI'], 'wp-register' ) || 
