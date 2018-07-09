@@ -56,7 +56,7 @@ Available translations:
 
 ### How do I know my blog is being cached?
 
-Check your cache directory wp-content/tmp/ for cache files. Check the load statistics in footer. Also you can set `DBCR_DEBUG` to true in wp-config.php file to display as hidden comments on your html page, what queries were loaded from cache and what from mysql.
+Check your cache directory wp-content/plugins/db-cache-reloaded-fix/cache for cache files. Check the load statistics in footer. Also you can set `DBCR_DEBUG` to true in wp-config.php file to display as hidden comments on your html page, what queries were loaded from cache and what from mysql.
 
 You can also define `DBCR_SAVEQUERIES` in wp-config.php file - it works similarly as defining `SAVEQUERIES`, but DB Cache Reloaded adds one extra field to the `$wpdb->queries` array - boolean value indicating if query was executed directly (`false`) or loaded from cache (`true`). Of course you can also use some extra code (e.g. some plugin) do display this data.
 
